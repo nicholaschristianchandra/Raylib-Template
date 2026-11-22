@@ -60,3 +60,7 @@ Every script must start with
 #include <Framework/Framework.hpp>
 ```
 For all the magic to work.
+
+# Stress Test
+This template also comes with Stress Test.zip which you can copy its Library/ and Program/ to stress test Raylib and this template.
+It should display a duck model on top of a brick plane with a day and night cycle, particles, and the ability to spawn waves of ducks around it.
