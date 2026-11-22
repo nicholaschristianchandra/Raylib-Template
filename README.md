@@ -92,3 +92,6 @@ It should display a duck model on top of a brick plane with a day and night cycl
 # Final Words
 There are many more to discuss, but I suggest that you try out the template yourself and read through Guide.pdf.
 Let me know if there's any issue and hope this template helps you on skipping the bullshit parts of low level programming :)
+
+You can use this template for whatever you like. 
+Commercial, non-commercial, list me in the credits, list me not, I don't really care. I just want to help other devs.
