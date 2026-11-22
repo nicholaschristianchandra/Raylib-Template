@@ -6,7 +6,7 @@ For anyone of you who screams _**"JUST LET ME PROGRAM"**_ then hopefully this te
 
 **Though if you're a Linux or Mac user (which is like, a huge portion of Raylib users), sorry to say: this template isn't for you.** It is very Windows oriented (filled with .bats and .ps1) and even that it's ideally done inside Visual Studio IDE. I did this because I live in Windows, and i think it's better for building to other platforms such as consoles in the future.
 
-**Some warning**: a lot of this template is vibe-coded. Why? Because I want to focus on actually programming and making these kinds of stuff are extremely fragile and filled with gotchas. I've tested, revised, and fine tuned heavily the outputted template for the last 6 months, and I am confident to say that it's stable.
+**Some warning**: a lot of this template is vibe-coded. Why? Because I want to focus on actually programming and making these kinds of stuff is extremely fragile and filled with gotchas. I've tested, revised, and fine tuned heavily the outputted template for the last 6 months, and I am confident to say that it's stable.
 
 **To use it, download the latest Raylib Template.zip from releases and copy it to**
 ```cpp
