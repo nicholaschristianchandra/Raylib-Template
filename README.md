@@ -43,6 +43,20 @@ Framework/Automations/Build.bat [Your Platform Name]
 
 Easily iterate your programming process using hot reload. (Debug only, not available on Release)
 
+```cpp
+namespace Program
+{
+	constexpr unsigned int WINDOW_TITLE_MAX_LENGTH = 128;
+
+	struct State
+	{
+		String(WINDOW_TITLE_MAX_LENGTH) WindowTitle = { PROGRAM_NAME };
+		Vector2 Resolution = {.x = 640, .y = 480};
+		RenderTexture2D Screen = {};
+	};
+}
+```
+
 Any code you wrote will be reloaded via a .dll and any data put inside `Program/Types/Program`'s Program State will be preserved upon the next reload.
 
 ## Asset Pipeline
