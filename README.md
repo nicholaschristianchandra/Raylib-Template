@@ -1,7 +1,25 @@
 # Raylib Template
 This is my personal Raylib template which runs on windows, ideally on Visual Studio IDE.
+Why does this template exist? Because I love low level programming, but i hate the plumbing parts such as build system, headers, asset pipeline, etc.
 
-**Some warning**: a lot of this template is vibe-coded. Why? Because I want to focus on actually programming and making these kinds of stuff are extremely fragile and filled with gotchas. I've test, revised, and fine tuned heavily the outputted template for the last 6 months, and I am confident to say that it's stable.
+For anyone of you who screams _**"JUST LET ME PROGRAM"**_ then hopefully this template is for you.
+
+**Though if you're a Linux or Mac user (which is like, the majority of Raylib users lol), sorry to say: this template isn't for you.** It is very Windows oriented (filled with .bats and .ps1) and even that it's ideally done inside Visual Studio IDE. I did this because I'm a windows developer, and i think it's better for building to other platforms such as consoles in the future.
+
+**Some warning**: a lot of this template is vibe-coded. Why? Because I want to focus on actually programming and making these kinds of stuff are extremely fragile and filled with gotchas. I've tested, revised, and fine tuned heavily the outputted template for the last 6 months, and I am confident to say that it's stable.
+
+**To use it, download the latest Raylib Template.zip from releases and copy it to**
+```cpp
+Documents\Visual Studio\Templates\ProjectTemplates
+```
+When you restart Visual Studio, the template should appear.
+
+If not, go to %localappdata%/Microsoft/VisualStudio/[Version]/ and try deleting these cache folders:
+```cpp
+- ComponentModelCache
+- ItemTemplatesCache_
+- ProjectTemplatesCache_
+```
 
 It includes features such as...
 
@@ -11,6 +29,11 @@ By default it supports builds to these platforms:
 - **Linux**: exports to Linux via Zig which can be packaged as a tar.gz or AppImage. Like windows, it can also be single executable and compressed.
 - **Web**: exports to web via Emscripten.
 - **Android**: exports to APK and/or AAB without a gradle project nor Android Studio. It also allows you to set up your keystore easily during setup. Also supports USB debugging.
+
+It doesn't support MacOS (because I don't have a mac and I'm pretty sure Mac's SDK is paid or something) nor consoles (because of NDAs). However, the template is build in modularity so that if you do have the SDK, you should be able to write a new platform build under Framework/Automations/Platforms/[Your Platform Name] and run
+```cpp
+Framework/Automations/Build.bat [Your Platform Name]
+```
 
 ## Hot reload
 Easily iterate your programming process using hot reload. (Debug only, not available on Release)
@@ -65,3 +88,7 @@ For all the magic to work.
 # Stress Test
 This template also comes with Stress Test.zip which you can copy its Library/ and Program/ to stress test Raylib and this template.
 It should display a duck model on top of a brick plane with a day and night cycle, particles, and the ability to spawn waves of ducks around it.
+
+# Final Words
+There are many more to discuss, but I suggest that you try out the template yourself and read through Guide.pdf.
+Let me know if there's any issue and hope this template helps you on skipping the bullshit parts of low level programming :)
