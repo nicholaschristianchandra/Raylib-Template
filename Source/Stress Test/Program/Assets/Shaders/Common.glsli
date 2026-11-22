@@ -1,0 +1,20 @@
+// Linear HDR light to the screen: a soft tone curve, then gamma
+vec3 ToScreen(vec3 color)
+{
+    color = 1.0 - exp(-color * 1.2);
+    return pow(clamp(color, 0.0, 1.0), vec3(1.0 / 2.2));
+}
+
+// The ducks' animation, the same as Scene::AnimateDuck on the CPU: they hop, turn and drift.
+// a: x, y, z, scale. b: angle, spin, phase
+void AnimateDuck(inout vec4 a, inout vec4 b, float time)
+{
+    if (b.y > 0.0)
+    {
+        float orbit = time * 0.03;
+        float s = sin(orbit);
+        float c = cos(orbit);
+        a.xyz = vec3(c * a.x - s * a.z, abs(sin(time * 5.0 + b.z)) * 0.3 * a.w, s * a.x + c * a.z);
+        b.x += time * b.y;
+    }
+}

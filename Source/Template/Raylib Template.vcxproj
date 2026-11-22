@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Windows (Debug)|x64">
+      <Configuration>Windows (Debug)</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Windows (Debug)|Win32">
+      <Configuration>Windows (Debug)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Windows (Release)|x64">
+      <Configuration>Windows (Release)</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Windows (Release)|Win32">
+      <Configuration>Windows (Release)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <!-- Platform configurations -->
+    <ProjectConfiguration Include="Android|x64">
+      <Configuration>Android</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Linux|x64">
+      <Configuration>Linux</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Web|x64">
+      <Configuration>Web</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <!-- End of Platform configurations -->
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".vsconfig" />
+    <None Include="Config.bat" />
+    <None Include="Framework\Automations\Build.bat" />
+    <None Include="Framework\Automations\Clean.bat" />
+    <None Include="Framework\Automations\Script.zip" />
+    <None Include="Framework\Automations\SetupHelpers.ps1" />
+    <None Include="Framework\Automations\Tools.cpp" />
+    <None Include="Framework\Automations\Platforms\Android\AndroidManifest.xml" />
+    <None Include="Framework\Automations\Platforms\Android\Build.bat" />
+    <None Include="Framework\Automations\Platforms\Android\Config.bat" />
+    <None Include="Framework\Automations\Platforms\Android\Setup.ps1" />
+    <None Include="Framework\Automations\Platforms\Linux\Build.bat" />
+    <None Include="Framework\Automations\Platforms\Linux\Config.bat" />
+    <None Include="Framework\Automations\Platforms\Linux\Linux.sh" />
+    <None Include="Framework\Automations\Platforms\Linux\Setup.ps1" />
+    <None Include="Framework\Automations\Platforms\Web\Build.bat" />
+    <None Include="Framework\Automations\Platforms\Web\Config.bat" />
+    <None Include="Framework\Automations\Platforms\Web\Setup.ps1" />
+    <None Include="Framework\Automations\Platforms\Web\Shell.html" />
+    <None Include="Framework\Automations\Platforms\Windows\Build.bat" />
+    <None Include="Framework\Automations\Platforms\Windows\Config.bat" />
+    <None Include="Framework\Automations\Platforms\Windows\Manifest.manifest" />
+    <None Include="Libraries\Raylib\LICENSE.txt" />
+    <None Include="Libraries\Raylib\UpdateRaylib.bat" />
+    <None Include="Libraries\Raylib\lib\Linux\x64\libraylib.a" />
+    <None Include="Libraries\Raylib\lib\Windows\x64\raylib.dll" />
+    <None Include="Libraries\Raylib\lib\Windows\x64\raylib.lib" />
+    <None Include="Libraries\Raylib\lib\Windows\x64\raylibdll.lib" />
+    <None Include="Libraries\Raylib\lib\Windows\x86\raylib.dll" />
+    <None Include="Libraries\Raylib\lib\Windows\x86\raylib.lib" />
+    <None Include="Libraries\Raylib\lib\Windows\x86\raylibdll.lib" />
+    <None Include="Libraries\UPX\LICENSE" />
+    <None Include="Libraries\UPX\upx.exe" />
+    <None Include="Program\Code\Datas\keep" />
+    <None Include="Program\Code\Systems\keep" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\Main.cpp" />
+    <ClCompile Include="Program\Code\Program.cpp">
+      <ForcedIncludeFiles>$(ProjectDir)Framework\Includes\Uses\Program.hpp</ForcedIncludeFiles>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\Assets.hpp" />
+    <ClInclude Include="Framework\Framework.hpp" />
+    <ClInclude Include="Framework\Precompiled.hpp" />
+    <ClInclude Include="Framework\Utilities.hpp" />
+    <ClInclude Include="Framework\Includes\Datas.hpp" />
+    <ClInclude Include="Framework\Includes\ForwardDeclarations.hpp" />
+    <ClInclude Include="Framework\Includes\Types.hpp" />
+    <ClInclude Include="Framework\Includes\Uses\Program.hpp" />
+    <ClInclude Include="Libraries\Raylib\include\raylib.h" />
+    <ClInclude Include="Program\Code\Types\Program.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Guide.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Program\Assets\Icon.png" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{$guid1$}</ProjectGuid>
+    <GameName>$projectname$</GameName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
+    <PlatformToolset Condition="Exists('$(VCTargetsPath)Platforms\$(Platform)\PlatformToolsets\ClangCL')">ClangCL</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <!-- Platform outputs -->
+  <PropertyGroup Condition="'$(Configuration)'=='Web'">
+    <OutputFile>index.html</OutputFile>
+  </PropertyGroup>
+  <!-- End of Platform outputs -->
+  <PropertyGroup>
+    <BuildConfiguration Condition="'$(Configuration)'=='Windows (Debug)'">Debug</BuildConfiguration>
+    <BuildConfiguration Condition="'$(Configuration)'=='Windows (Release)'">Release</BuildConfiguration>
+    <BuildPlatform>$(Platform)</BuildPlatform>
+    <BuildPlatform Condition="'$(Platform)'=='Win32'">x86</BuildPlatform>
+    <OutputFolder>Windows\$(BuildPlatform)\$(BuildConfiguration)</OutputFolder>
+    <!-- Every other configuration is a folder in Framework\Automations\Platforms, built as Release -->
+    <IsPlatform Condition="'$(BuildConfiguration)'==''">true</IsPlatform>
+    <OutputFile Condition="'$(OutputFile)'=='' and '$(IsPlatform)'=='true'">$(GameName)</OutputFile>
+    <OutputFile Condition="'$(OutputFile)'==''">$(GameName).exe</OutputFile>
+    <BuildConfiguration Condition="'$(IsPlatform)'=='true'">Release</BuildConfiguration>
+    <BuildPlatform Condition="'$(IsPlatform)'=='true'">$(Configuration)</BuildPlatform>
+    <OutputFolder Condition="'$(IsPlatform)'=='true'">$(Configuration)\Release</OutputFolder>
+    <PlatformScript>$(ProjectDir)Framework\Automations\Platforms\$(Configuration)\Build.bat</PlatformScript>
+    <NMakeBuildCommandLine>Framework\Automations\Build.bat $(BuildConfiguration) $(BuildPlatform)</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>Framework\Automations\Clean.bat &amp;&amp; Framework\Automations\Build.bat $(BuildConfiguration) $(BuildPlatform)</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>Framework\Automations\Clean.bat</NMakeCleanCommandLine>
+    <OutDir>$(ProjectDir)Builds\Outputs\$(OutputFolder)\</OutDir>
+    <NMakeOutput>$(OutDir)$(OutputFile)</NMakeOutput>
+    <NMakeIncludeSearchPath>$(ProjectDir)Libraries\Raylib\include;$(ProjectDir)Libraries;$(ProjectDir);$(IncludePath)</NMakeIncludeSearchPath>
+    <LocalDebuggerCommand>$(NMakeOutput)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <IntDir>$(ProjectDir).vs\Intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <AdditionalOptions>/std:c++20</AdditionalOptions>
+  </PropertyGroup>
+  <!-- F5 and Ctrl+F5 on a platform run "Build.bat run" in its folder: in a browser, on a phone, in WSL... -->
+  <PropertyGroup Condition="'$(IsPlatform)'=='true' and Exists('$(PlatformScript)') and $([System.IO.File]::ReadAllText('$(PlatformScript)').Contains(':run'))">
+    <LocalDebuggerCommand>$(ComSpec)</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>/c call "$(PlatformScript)" run || pause</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(BuildConfiguration)'=='Debug'">
+    <NMakePreprocessorDefinitions>IS_DEBUG</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,0 +1,124 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Raylib Template</Name>
+    <Description>raylib C++ template for Windows, Linux, the web and Android: a custom build system, asset pipeline, hot reload, and code architecture.</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Raylib Template</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Raylib Template.vcxproj" File="Raylib Template.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">Raylib Template.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.user">Raylib Template.vcxproj.user</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName=".clang-format">.clang-format</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName=".gitattributes">.gitattributes</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName=".gitignore">.gitignore</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName=".vsconfig">.vsconfig</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Config.bat">Config.bat</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Guide.pdf">Guide.pdf</ProjectItem>
+      <Folder Name="FRAMEWORK" TargetFolderName="Framework">
+        <ProjectItem ReplaceParameters="false" TargetFileName="Assets.hpp">Assets.hpp</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Framework.hpp">Framework.hpp</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Main.cpp">Main.cpp</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Precompiled.hpp">Precompiled.hpp</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Utilities.hpp">Utilities.hpp</ProjectItem>
+        <Folder Name="AUTOMATIONS" TargetFolderName="Automations">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Build.bat">Build.bat</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Clean.bat">Clean.bat</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Script.zip">Script.zip</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="SetupHelpers.ps1">SetupHelpers.ps1</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="Tools.cpp">Tools.cpp</ProjectItem>
+          <Folder Name="PLATFORMS" TargetFolderName="Platforms">
+            <Folder Name="ANDROID" TargetFolderName="Android">
+              <ProjectItem ReplaceParameters="false" TargetFileName="AndroidManifest.xml">AndroidManifest.xml</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Build.bat">Build.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Config.bat">Config.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Setup.ps1">Setup.ps1</ProjectItem>
+            </Folder>
+            <Folder Name="LINUX" TargetFolderName="Linux">
+              <ProjectItem ReplaceParameters="false" TargetFileName="Build.bat">Build.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Config.bat">Config.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Linux.sh">Linux.sh</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Setup.ps1">Setup.ps1</ProjectItem>
+            </Folder>
+            <Folder Name="WEB" TargetFolderName="Web">
+              <ProjectItem ReplaceParameters="false" TargetFileName="Build.bat">Build.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Config.bat">Config.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Setup.ps1">Setup.ps1</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Shell.html">Shell.html</ProjectItem>
+            </Folder>
+            <Folder Name="WINDOWS" TargetFolderName="Windows">
+              <ProjectItem ReplaceParameters="false" TargetFileName="Build.bat">Build.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Config.bat">Config.bat</ProjectItem>
+              <ProjectItem ReplaceParameters="false" TargetFileName="Manifest.manifest">Manifest.manifest</ProjectItem>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="INCLUDES" TargetFolderName="Includes">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Datas.hpp">Datas.hpp</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ForwardDeclarations.hpp">ForwardDeclarations.hpp</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Types.hpp">Types.hpp</ProjectItem>
+          <Folder Name="USES" TargetFolderName="Uses">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Program.hpp">Program.hpp</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <Folder Name="LIBRARIES" TargetFolderName="Libraries">
+        <Folder Name="RAYLIB" TargetFolderName="Raylib">
+          <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE.txt">LICENSE.txt</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="UpdateRaylib.bat">UpdateRaylib.bat</ProjectItem>
+          <Folder Name="INCLUDE" TargetFolderName="include">
+            <ProjectItem ReplaceParameters="false" TargetFileName="raylib.h">raylib.h</ProjectItem>
+          </Folder>
+          <Folder Name="LIB" TargetFolderName="lib">
+            <Folder Name="LINUX" TargetFolderName="Linux">
+              <Folder Name="X64" TargetFolderName="x64">
+                <ProjectItem ReplaceParameters="false" TargetFileName="libraylib.a">libraylib.a</ProjectItem>
+              </Folder>
+            </Folder>
+            <Folder Name="WINDOWS" TargetFolderName="Windows">
+              <Folder Name="X64" TargetFolderName="x64">
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylib.dll">raylib.dll</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylib.lib">raylib.lib</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylibdll.lib">raylibdll.lib</ProjectItem>
+              </Folder>
+              <Folder Name="X86" TargetFolderName="x86">
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylib.dll">raylib.dll</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylib.lib">raylib.lib</ProjectItem>
+                <ProjectItem ReplaceParameters="false" TargetFileName="raylibdll.lib">raylibdll.lib</ProjectItem>
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="UPX" TargetFolderName="UPX">
+          <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE">LICENSE</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="upx.exe">upx.exe</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="PROGRAM" TargetFolderName="Program">
+        <Folder Name="ASSETS" TargetFolderName="Assets">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Icon.png">Icon.png</ProjectItem>
+        </Folder>
+        <Folder Name="CODE" TargetFolderName="Code">
+          <ProjectItem ReplaceParameters="false" TargetFileName="Program.cpp">Program.cpp</ProjectItem>
+          <Folder Name="DATAS" TargetFolderName="Datas">
+            <ProjectItem ReplaceParameters="false" TargetFileName="keep">keep</ProjectItem>
+          </Folder>
+          <Folder Name="SYSTEMS" TargetFolderName="Systems">
+            <ProjectItem ReplaceParameters="false" TargetFileName="keep">keep</ProjectItem>
+          </Folder>
+          <Folder Name="TYPES" TargetFolderName="Types">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Program.hpp">Program.hpp</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Build.bat fills in the values in double braces. NativeActivity runs libmain.so, the game with raylib, with no Java code. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="{{PACKAGE}}"
+    android:versionCode="{{VERSION_CODE}}"
+    android:versionName="{{VERSION_NAME}}"
+    android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="{{MIN_SDK}}" android:targetSdkVersion="{{TARGET_SDK}}" />
+
+    <!-- OpenGL ES 3.0 -->
+    <uses-feature android:glEsVersion="0x00030000" android:required="true" />
+
+    <!-- Touchscreen and game controllers are used when present -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+
+    <application android:label="{{LABEL}}"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:hasCode="false"
+        android:theme="@style/Fullscreen"
+        android:extractNativeLibs="false"
+        android:hardwareAccelerated="true">
+
+        <activity android:name="android.app.NativeActivity"
+            android:label="{{LABEL}}"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout|smallestScreenSize|keyboard|navigation|uiMode|density"
+            android:resizeableActivity="true"
+            android:screenOrientation="{{SCREEN_ORIENTATION}}"
+            android:exported="true">
+            <meta-data android:name="android.app.lib_name" android:value="main" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
