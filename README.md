@@ -122,4 +122,4 @@ You can use this template for whatever you like as it uses the Unlicense license
 
 Commercial, non-commercial, list me in the credits, list me not, I don't really care. I just want to help other devs.
 
-And... oh yeah, there's also a version of this template but for SDL 3! Might check that out also if you use it.
+And... oh yeah, there's also a version of this template but for [SDL 3](https://github.com/nicholaschristianchandra/SDL-Template)! Might check that out also if you use it.
