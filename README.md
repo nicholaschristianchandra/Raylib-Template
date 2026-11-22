@@ -37,11 +37,14 @@ Framework/Automations/Build.bat [Your Platform Name]
 
 ## Hot reload
 Easily iterate your programming process using hot reload. (Debug only, not available on Release)
+
 Any code you wrote will be reloaded via a .dll and any data put inside Program/Types/Program's Program State will be preserved upon the next reload.
 
 ## Asset Pipeline
 Importing assets (images, audio, glsl, and really anything) is as simple as putting it under Program/Assets.
+
 All files inside that folder will be put inside Assets.data which will be embedded/separated from the exe depending on EMBED_ASSETS.
+
 Assets.data can also be encrypted using the ENABLE_ENCRYPTION option so it could not be pulled with ordinary tools.
 
 Using an asset with raylib is as simple as using the load functions inside the Assets:: namespace which will load from the root of Program/Assets folder.
