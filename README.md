@@ -1,5 +1,6 @@
 # Raylib Template
 This is my personal Raylib template which runs on windows, ideally on Visual Studio IDE.
+
 Some warning: a lot of this template is vibe-coded. Why? Because I want to focus on actually programming and making these kinds of stuff are extremely fragile and filled with gotchas. I've test, revised, and fine tuned heavily the outputted template for the last 6 months, and I am confident to say that it's stable.
 
 It includes features such as...
