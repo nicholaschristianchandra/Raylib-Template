@@ -53,7 +53,7 @@ All files inside that folder will be put inside `Assets.data` which will be embe
 
 `Assets.data` can also be encrypted using the `ENABLE_ENCRYPTION` option so it could not be pulled with ordinary tools.
 
-Using an asset with Raylib is as simple as using the load functions inside the `Assets::` namespace which will load from the root of the `Program/Assets` folder.
+Using an asset with Raylib is as simple as using the load functions from Raylib itself or some from the `Assets::` namespace which will load from the root of the `Program/Assets` folder.
 
 ```cpp
 Texture2D texture = LoadTexture("Sprites/Player.png");
